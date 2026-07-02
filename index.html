@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subiksha J — CSE Student & Developer Portfolio</title>
+  <meta name="description" content="Subiksha J — Computer Science and Engineering student at Rohini College of Engineering. Java Developer, Python enthusiast, and UI/UX Designer." />
+  <meta property="og:title" content="Subiksha J — Building Digital Experiences" />
+  <meta property="og:description" content="CSE Fresher Portfolio — Java, Python, HTML, UI/UX Design. Based in Tirunelveli, India." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ─── Cursor ──────────────────────────────────── -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ─── Noise BG ────────────────────────────────── -->
+  <canvas id="noiseBg" class="noise-bg"></canvas>
+
+  <!-- ─── Navigation ──────────────────────────────── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="navLogo">
+        <span class="logo-bracket">&lt;</span>SB<span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#work"     class="nav-link">Projects</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#certs"    class="nav-link">Certifications</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="mailto:j.subiksha810@gmail.com" class="nav-cta" id="navCta">
+        <span>Hire Me</span>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1L13 7L7 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge" id="heroBadge">
+        <span class="badge-dot"></span>
+        Open to Opportunities · Fresher
+      </div>
+
+      <h1 class="hero-title" id="heroTitle">
+        <span class="title-line reveal-line">Building</span>
+        <span class="title-line reveal-line gradient-text">Digital</span>
+        <span class="title-line reveal-line">Experiences.</span>
+      </h1>
+
+      <p class="hero-sub" id="heroSub">
+        Hi, I'm <strong>Subiksha J</strong> — CSE student at Rohini College of Engineering.<br/>
+        Java Developer · Python Enthusiast · UI/UX Designer based in Tirunelveli, India.
+      </p>
+
+      <div class="hero-actions" id="heroActions">
+        <a href="#work" class="btn-primary" id="btnViewWork">
+          <span>View My Projects</span>
+          <div class="btn-glow"></div>
+        </a>
+        <a href="#contact" class="btn-ghost" id="btnContact">Let's Connect</a>
+      </div>
+
+      <div class="hero-stats" id="heroStats">
+        <div class="stat-item">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-fresher">Fresher</span>
+          <span class="stat-label">Status</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-label">Technologies</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" id="scrollIndicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ─── About ───────────────────────────────────── -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>01 / About</span>
+      </div>
+
+      <div class="about-grid">
+
+        <!-- Profile Card -->
+        <div class="profile-card glass-card reveal" id="profileCard">
+          <div class="profile-img-wrap">
+            <img src="assets/subiksha.jpeg" alt="Subiksha J — CSE Student" class="profile-img" id="profileImg" />
+            <div class="profile-img-glow"></div>
+            <div class="profile-badge-float">💻 Fresher</div>
+          </div>
+          <div class="profile-info">
+            <h3>Subiksha J</h3>
+            <p>CSE Student · 2023–2027</p>
+            <div class="profile-tags">
+              <span class="tag">Java</span>
+              <span class="tag">Python</span>
+              <span class="tag">UI/UX</span>
+            </div>
+          </div>
+
+          <!-- Quick Info -->
+          <div class="profile-quick-info">
+            <div class="qi-row">
+              <span class="qi-icon">🎓</span>
+              <span>B.E. Computer Science &amp; Engineering</span>
+            </div>
+            <div class="qi-row">
+              <span class="qi-icon">🏛️</span>
+              <span>Rohini College of Engg. &amp; Tech.</span>
+            </div>
+            <div class="qi-row">
+              <span class="qi-icon">🌐</span>
+              <span>Anna University</span>
+            </div>
+            <div class="qi-row">
+              <span class="qi-icon">📍</span>
+              <span>Tirunelveli – 627109, India</span>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </div>
+
+        <!-- About Text -->
+        <div class="about-text reveal">
+          <h2 class="section-title">
+            Ready to grow,<br/>
+            <span class="gradient-text">one line of code at a time.</span>
+          </h2>
+
+          <p class="about-desc">
+            To be a part of a reputed organization which provides steady career growth along with job satisfaction, and to start my career with new learning experiences and contribute values for the profitability of the organization.
+          </p>
+
+          <!-- Education Card -->
+          <div class="edu-card glass-card">
+            <div class="edu-header">
+              <div class="edu-icon">🎓</div>
+              <div>
+                <h4>Bachelor of Computer Science and Engineering</h4>
+                <p class="edu-uni">Rohini College of Engineering &amp; Technology · Anna University</p>
+              </div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-year">2023 – 2027</span>
+              <span class="edu-status">Ongoing</span>
+            </div>
+          </div>
+
+          <!-- Areas of Interest -->
+          <div class="interest-row">
+            <h4 class="sub-heading">Areas of Interest</h4>
+            <div class="interest-tags">
+              <span class="interest-tag">☕ Java Developer</span>
+              <span class="interest-tag">🐍 Python Developer</span>
+              <span class="interest-tag">🎨 Designer</span>
+            </div>
+          </div>
+
+          <!-- Highlights -->
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon neon-blue">☕</div>
+              <div>
+                <strong>Java &amp; C/C++</strong>
+                <p>Strong foundation in object-oriented and structured programming</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon cyber-lime">🎨</div>
+              <div>
+                <strong>UI/UX &amp; Web Design</strong>
+                <p>Pixel-perfect responsive interfaces with modern design principles</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon neon-blue">🐍</div>
+              <div>
+                <strong>Python &amp; Data Science</strong>
+                <p>Data visualization and scripting with Python fundamentals</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="mailto:j.subiksha810@gmail.com" class="btn-primary small">
+            <span>Get In Touch</span>
+            <div class="btn-glow"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Projects ─────────────────────────────────── -->
+  <section class="work section" id="work">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>02 / Projects</span>
+      </div>
+      <div class="section-header reveal">
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-sub">Academic projects built with real-world impact</p>
+      </div>
+
+      <div class="projects-grid two-col">
+
+        <!-- Project 1 — Portfolio Website -->
+        <article class="project-card project-featured glass-card reveal" id="proj1">
+          <div class="project-img-wrap" style="min-height: 220px;">
+            <div class="project-img-bg" style="background: linear-gradient(135deg, #08080d 0%, #0d2137 50%, #061a10 100%);">
+              <div class="mini-3d-icon" style="font-size:3.5rem;">🌐</div>
+              <div class="project-overlay-text">Portfolio Website · Flask</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-num">01</span>
+              <div class="project-tags-row">
+                <span class="ptag">Flask</span>
+                <span class="ptag">Python</span>
+                <span class="ptag">HTML/CSS</span>
+              </div>
+            </div>
+            <h3 class="project-title">Portfolio Website</h3>
+            <p class="project-year">2024 – 2025</p>
+            <p class="project-desc">
+              A portfolio website that helps people show their skills, projects, and achievements online. Built with Flask for backend content management and modern web technologies for a responsive, attractive, and user-friendly design.
+            </p>
+            <div class="project-features">
+              <div class="pf-item">
+                <span class="pf-dot"></span>
+                <span>Strong bio with interesting and fun facts</span>
+              </div>
+              <div class="pf-item">
+                <span class="pf-dot"></span>
+                <span>Easy navigation for visitors to find information quickly</span>
+              </div>
+              <div class="pf-item">
+                <span class="pf-dot"></span>
+                <span>Fully responsive, modern and clean design</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Subikshaj108" target="_blank" rel="noopener" class="proj-link github" id="proj1Github">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </article>
+
+        <!-- Project 2 — Local Network Hub -->
+        <article class="project-card project-featured glass-card reveal" id="proj2">
+          <div class="project-img-wrap" style="min-height: 220px;">
+            <div class="project-img-bg" style="background: linear-gradient(135deg, #08080d 0%, #1a0d37 50%, #0d3721 100%);">
+              <div class="mini-3d-icon" style="font-size:3.5rem;">🌍</div>
+              <div class="project-overlay-text">Local Network Hub · Community Platform</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="project-num">02</span>
+              <div class="project-tags-row">
+                <span class="ptag">Web App</span>
+                <span class="ptag">Community</span>
+                <span class="ptag">Full Stack</span>
+              </div>
+            </div>
+            <h3 class="project-title">Local Network Hub</h3>
+            <p class="project-year">2025 – 2026</p>
+            <p class="project-desc">
+              A unified community platform bringing together essential local services — Blood Donor Management, Tutor Search, and Missing Things Identification — into a single platform. Improves communication, encourages participation, and provides quick access to important local services.
+            </p>
+            <div class="project-features">
+              <div class="pf-item">
+                <span class="pf-dot lime"></span>
+                <span>Blood Donor Management system</span>
+              </div>
+              <div class="pf-item">
+                <span class="pf-dot lime"></span>
+                <span>Tutor Search for local learning</span>
+              </div>
+              <div class="pf-item">
+                <span class="pf-dot lime"></span>
+                <span>Missing Things Identification platform</span>
+              </div>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Subikshaj108" target="_blank" rel="noopener" class="proj-link github" id="proj2Github">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                View on GitHub
+              </a>
+            </div>
+          </div>
+          <div class="card-shine"></div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Skills ───────────────────────────────────── -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>03 / Skills</span>
+      </div>
+      <h2 class="section-title reveal">Tech Stack &amp; Skills</h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-category glass-card reveal" id="skillProg">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">💻</div>
+            <h3>Programming</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span>Java</span><div class="skill-bar"><div class="skill-fill" style="--w:80%"></div></div></div>
+            <div class="skill-item"><span>C / C++</span><div class="skill-bar"><div class="skill-fill" style="--w:75%"></div></div></div>
+            <div class="skill-item"><span>Python (Basics)</span><div class="skill-bar"><div class="skill-fill" style="--w:70%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card reveal" id="skillWeb">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">🌐</div>
+            <h3>Web &amp; Design</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item"><span>HTML</span><div class="skill-bar"><div class="skill-fill" style="--w:85%"></div></div></div>
+            <div class="skill-item"><span>UI/UX Design</span><div class="skill-bar"><div class="skill-fill" style="--w:78%"></div></div></div>
+            <div class="skill-item"><span>Flask (Python)</span><div class="skill-bar"><div class="skill-fill" style="--w:65%"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-category glass-card reveal" id="skillSoft">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">🤝</div>
+            <h3>Soft Skills</h3>
+          </div>
+          <div class="soft-skills-grid">
+            <div class="soft-chip">💬 Communication</div>
+            <div class="soft-chip">🤝 Teamwork</div>
+            <div class="soft-chip">🧩 Problem Solving</div>
+            <div class="soft-chip">🎨 Designing</div>
+            <div class="soft-chip">🏆 Leadership</div>
+            <div class="soft-chip">📐 Interpersonal</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tech Ticker -->
+      <div class="tech-ticker reveal" id="techTicker">
+        <div class="ticker-track">
+          <span>Java</span><span>•</span><span>Python</span><span>•</span>
+          <span>C/C++</span><span>•</span><span>HTML</span><span>•</span>
+          <span>Flask</span><span>•</span><span>UI/UX</span><span>•</span>
+          <span>Data Visualization</span><span>•</span><span>Git</span><span>•</span>
+          <!-- repeat -->
+          <span>Java</span><span>•</span><span>Python</span><span>•</span>
+          <span>C/C++</span><span>•</span><span>HTML</span><span>•</span>
+          <span>Flask</span><span>•</span><span>UI/UX</span><span>•</span>
+          <span>Data Visualization</span><span>•</span><span>Git</span><span>•</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Certifications ───────────────────────────── -->
+  <section class="section" id="certs" style="background: var(--obsidian-2);">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>04 / Certifications</span>
+      </div>
+      <h2 class="section-title reveal">Academic Skills &amp; Courses</h2>
+      <p class="section-sub reveal">Certifications earned through 2023–2026</p>
+
+      <div class="certs-grid">
+
+        <!-- IBM -->
+        <div class="cert-card glass-card reveal" id="certIbm">
+          <div class="cert-provider-badge ibm">IBM</div>
+          <div class="cert-icon">📊</div>
+          <h3>Data Visualization with Python</h3>
+          <p>Provided by <strong>IBM</strong></p>
+          <div class="cert-year">2023 – 2026</div>
+        </div>
+
+        <div class="cert-card glass-card reveal" id="certIbm2">
+          <div class="cert-provider-badge ibm">IBM</div>
+          <div class="cert-icon">🐍</div>
+          <h3>Python 101 for Data Science</h3>
+          <p>Provided by <strong>IBM</strong></p>
+          <div class="cert-year">2023 – 2026</div>
+        </div>
+
+        <!-- Infosys -->
+        <div class="cert-card glass-card reveal" id="certInfosys">
+          <div class="cert-provider-badge infosys">Infosys</div>
+          <div class="cert-icon">🔰</div>
+          <h3>Basic of Python</h3>
+          <p>Provided by <strong>Infosys Springboard</strong></p>
+          <div class="cert-year">2023 – 2026</div>
+        </div>
+
+        <!-- Great Learning -->
+        <div class="cert-card glass-card reveal" id="certGL">
+          <div class="cert-provider-badge gl">GL</div>
+          <div class="cert-icon">🌐</div>
+          <h3>Basic of HTML</h3>
+          <p>Provided by <strong>Great Learning Academy</strong></p>
+          <div class="cert-year">2023 – 2026</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Achievements & Extras ─────────────────────── -->
+  <section class="section" id="extras" style="background: var(--obsidian);">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>05 / More About Me</span>
+      </div>
+
+      <div class="extras-grid">
+
+        <!-- Achievements -->
+        <div class="extra-card glass-card reveal" id="cardAchievements">
+          <div class="extra-card-header">
+            <span class="extra-icon">🏆</span>
+            <h3>Achievements</h3>
+          </div>
+          <ul class="extra-list">
+            <li>Completed academic mini and major projects successfully</li>
+            <li>Active participant in coding and technical events</li>
+          </ul>
+        </div>
+
+        <!-- Hobbies -->
+        <div class="extra-card glass-card reveal" id="cardHobbies">
+          <div class="extra-card-header">
+            <span class="extra-icon">⚡</span>
+            <h3>Hobbies</h3>
+          </div>
+          <div class="hobby-chips">
+            <span class="hobby-chip">🖥️ Learning New Technologies</span>
+            <span class="hobby-chip">🏃 Athletics</span>
+            <span class="hobby-chip">🧠 Learning Aptitude</span>
+          </div>
+        </div>
+
+        <!-- Extra-Curricular -->
+        <div class="extra-card glass-card reveal" id="cardExtra">
+          <div class="extra-card-header">
+            <span class="extra-icon">🎭</span>
+            <h3>Extra-Curricular</h3>
+          </div>
+          <p class="extra-desc">Developed leadership, communication, and interpersonal skills through activities, events (Sports), and collaborative team work.</p>
+        </div>
+
+        <!-- Languages -->
+        <div class="extra-card glass-card reveal" id="cardLang">
+          <div class="extra-card-header">
+            <span class="extra-icon">🗣️</span>
+            <h3>Languages</h3>
+          </div>
+          <div class="lang-list">
+            <div class="lang-item">
+              <span class="lang-name">Tamil</span>
+              <span class="lang-level fluent">Fluent</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-name">English</span>
+              <span class="lang-level fluent">Fluent</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ──────────────────────────────────── -->
+  <section class="contact section" id="contact" style="background: var(--obsidian-2);">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="label-line"></span>
+        <span>06 / Contact</span>
+      </div>
+
+      <div class="contact-inner">
+        <div class="contact-left reveal">
+          <h2 class="section-title">Let's build something <span class="gradient-text">remarkable.</span></h2>
+          <p class="contact-desc">I'm actively looking for opportunities to grow and learn. Feel free to reach out for collaborations, internships, or just a friendly hello!</p>
+
+          <div class="contact-socials">
+
+            <a href="tel:9080557365" class="social-link" id="socialPhone">
+              <div class="social-icon">📱</div>
+              <span>+91 9080557365</span>
+            </a>
+
+            <a href="mailto:j.subiksha810@gmail.com" class="social-link" id="socialEmail">
+              <div class="social-icon">✉️</div>
+              <span>j.subiksha810@gmail.com</span>
+            </a>
+
+            <a href="https://github.com/Subikshaj108" target="_blank" rel="noopener" class="social-link" id="socialGithub">
+              <div class="social-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <span>github.com/Subikshaj108</span>
+            </a>
+
+            <div class="social-link" id="socialLocation">
+              <div class="social-icon">📍</div>
+              <span>Tirunelveli – 627109, Tamil Nadu, India</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <form class="contact-form glass-card reveal" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" name="name" placeholder="Your name" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Your Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="your@email.com" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="contactPurpose">Purpose</label>
+            <select id="contactPurpose" name="purpose">
+              <option value="">Select purpose</option>
+              <option value="internship">Internship Opportunity</option>
+              <option value="job">Job Opportunity</option>
+              <option value="collab">Project Collaboration</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMsg">Message</label>
+            <textarea id="contactMsg" name="message" rows="4" placeholder="Tell me about the opportunity..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary full" id="formSubmitBtn">
+            <span>Send Message</span>
+            <div class="btn-glow"></div>
+          </button>
+          <div class="form-success" id="formSuccess">
+            <span>✅ Message sent! I'll get back to you soon.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ──────────────────────────────────── -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="nav-logo">
+          <span class="logo-bracket">&lt;</span>SB<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-copy">© 2025 Subiksha J · B.E. CSE · Tirunelveli, India ☕</p>
+        <div class="footer-back-top">
+          <a href="#hero" id="backTop">Back to top ↑</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
